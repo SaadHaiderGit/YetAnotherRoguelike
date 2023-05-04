@@ -24,10 +24,22 @@
     <Compile Include="actions.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="engine.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="entity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game_map.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="input_handlers.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="main.py" />
+    <Compile Include="tile_types.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
