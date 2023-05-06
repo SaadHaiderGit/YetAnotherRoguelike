@@ -37,6 +37,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="main.py" />
+    <Compile Include="procgen.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tile_types.py">
       <SubType>Code</SubType>
     </Compile>
