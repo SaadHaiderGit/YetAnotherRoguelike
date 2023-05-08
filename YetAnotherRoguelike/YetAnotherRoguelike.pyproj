@@ -30,6 +30,9 @@
     <Compile Include="entity.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="entity_factories.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="game_map.py">
       <SubType>Code</SubType>
     </Compile>

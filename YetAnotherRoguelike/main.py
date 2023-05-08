@@ -3,10 +3,11 @@
 #Last Modified 5/3/2023
 #Yet Another Roguelike: A first attempt at creating a roguelike with Python
 
+import copy
 import tcod
 
 from engine import Engine
-from entity import Entity
+import entity_factories
 from input_handlers import EventHandler
 from procgen import generate_dungeon
 
@@ -24,12 +25,12 @@ def main() -> None:
     room_min_size = 6
     max_rooms = 30
 
+    max_monsters_per_room = 2
+
     tileset = tcod.tileset.load_tilesheet("Roguelike_ImageFile.png", 32, 8, tcod.tileset.CHARMAP_TCOD)
     event_handler = EventHandler()
 
-    player = Entity(int(screen_width / 2), int(screen_height / 2), "@", (255, 255, 255))
-    npc = Entity(int(screen_width / 2 - 5), int(screen_height / 2), "@", (255, 255, 0))
-    entities = {npc, player}
+    player = copy.deepcopy(entity_factories.player)
 
     game_map = generate_dungeon(
         max_rooms=max_rooms,
@@ -37,9 +38,10 @@ def main() -> None:
         room_max_size=room_max_size,
         map_width=map_width,
         map_height=map_height,
+        max_monsters_per_room=max_monsters_per_room,
         player=player
     )
-    engine = Engine(entities=entities, event_handler=event_handler, game_map=game_map, player=player)
+    engine = Engine(event_handler=event_handler, game_map=game_map, player=player)
 
 
     with tcod.context.new_terminal(
