@@ -24,6 +24,18 @@
     <Compile Include="actions.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="components\ai.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="components\base_component.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="components\fighter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="components\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="engine.py">
       <SubType>Code</SubType>
     </Compile>
@@ -43,9 +55,15 @@
     <Compile Include="procgen.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="render_order.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tile_types.py">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="components\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
