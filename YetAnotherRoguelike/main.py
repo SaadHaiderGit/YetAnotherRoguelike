@@ -21,7 +21,7 @@ def main() -> None:
     map_width = 80
     map_height = 43
 
-    room_max_size = 10
+    room_max_size = 11
     room_min_size = 6
     max_rooms = 30
 

@@ -1,0 +1,14 @@
+Saad Haider - Yet Another Roguelike
+Date Updated - 5/16/23
+
+
+[CHANGELOG]
+- Added a changelog ;)
+- Added rat enemies! They spawn in groups of two, allowing them to swarm the player. 
+- Slightly increased max room size
+- Increased max number of monsters that spawn in a large room (at least 8x8)
+
+
+
+[OTHER NOTES]
+Thus far I have been following the Python Roguelike Tutorial (as shown in the Github description) exactly as shown. From this point onward, however, I will now attempt to make tweaks to the existing code and add new ideas, to make the roguelike more unique and interesting to play. My hope is to learn how to make major overhauls to the game structure.

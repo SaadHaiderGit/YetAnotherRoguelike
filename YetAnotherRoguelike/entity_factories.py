@@ -7,7 +7,15 @@ player = Actor(
     color=(255, 255, 255),
     name="Player",
     ai_cls=HostileEnemy,
-    fighter=Fighter(hp=30, defense=2, power=5),
+    fighter=Fighter(hp=30, defense=20, power=50),
+)
+
+rat = Actor(
+    char="r",
+    color=(234,221,50),
+    name="Rat",
+    ai_cls=HostileEnemy,
+    fighter=Fighter(hp=7, defense=0, power=3),
 )
 
 orc = Actor(
@@ -25,3 +33,6 @@ troll = Actor(
     ai_cls=HostileEnemy,
     fighter=Fighter(hp=16, defense=1, power=4),
 )
+
+
+

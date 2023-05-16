@@ -49,6 +49,11 @@ class RectangularRoom:
 def place_entities(
     room: RectangularRoom, dungeon: GameMap, maximum_monsters: int,
 ) -> None:
+    '''Spawn enemies in each room.'''
+
+    if ((room.x2 - room.x1) > 8 and (room.y2 - room.y1) > 8):   #Large rooms get more enemies
+        maximum_monsters += 1
+
     number_of_monsters = random.randint(0, maximum_monsters)
 
     for i in range(number_of_monsters):
@@ -56,7 +61,15 @@ def place_entities(
         y = random.randint(room.y1 + 1, room.y2 - 1)
 
         if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
-            if random.random() < 0.8:
+            gen_rand = random.random()
+            if gen_rand < 0.2:
+                entity_factories.rat.spawn(dungeon, x, y)
+
+                x = random.randint(room.x1 + 1, room.x2 - 1)
+                y = random.randint(room.y1 + 1, room.y2 - 1)
+                entity_factories.rat.spawn(dungeon, x, y)   # Spawn two Rats (will want to optimize xy-axis code later)
+
+            elif gen_rand < 0.8:
                 entity_factories.orc.spawn(dungeon, x, y)   # Spawn Orc
             else:
                 entity_factories.troll.spawn(dungeon, x, y) # Spawn Troll 
